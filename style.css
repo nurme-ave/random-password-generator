@@ -65,13 +65,14 @@ body {
   border: none;
 }
 
-.generate-pwrd-button {
+/* .generate-pwrd-button {
   margin-right: 1em;
-}
+} */
 
 .button-group {
   display: flex;
   width: 100%;
+  gap: 1em;
 }
 
 button:hover {
@@ -157,11 +158,26 @@ button:hover {
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575.98px) {
   .card-container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
-    padding: 1em;
+    padding: 2em 1em;
   }
+
+  .button-group {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    width: 65%;
+  }
+
+  .boxes-group > * {
+    flex-basis: 65%;
+  }
+
+
 }
