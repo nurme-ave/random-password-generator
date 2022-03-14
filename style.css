@@ -52,7 +52,7 @@ body {
 }
 
 .generate-pwrd-button,
-.clear-all-fields {
+.clear-all-fields-button {
   padding: 0.75em;
   font-size: 1rem;
   font-weight: 500;

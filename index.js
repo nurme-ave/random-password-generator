@@ -1,5 +1,5 @@
 const generatePasswords = document.querySelector('.generate-pwrd-button')
-const clearAllFields = document.querySelector('.clear-all-fields')
+const clearAllFields = document.querySelector('.clear-all-fields-button')
 const alphabet = String.fromCharCode(...Array(123).keys()).slice(33)  // create an array with 123 items starting from index 33 in the ASCII code
 
 let allBoxes = document.querySelectorAll('.box')
