@@ -1,5 +1,6 @@
 const generatePasswords = document.querySelector('.generate-pwrd-button')
 const clearAllFields = document.querySelector('.clear-all-fields-button')
+const copiedText = document.querySelector('.copied-text')
 const alphabet = String.fromCharCode(...Array(123).keys()).slice(33)  // create an array with 123 items starting from index 33 in the ASCII code
 
 let allBoxes = document.querySelectorAll('.box')
@@ -34,8 +35,17 @@ function copyToClipboard() {
   id = this.id
   getText = allBoxes[id - 1].textContent
   navigator.clipboard.writeText(getText)
-  alert(`Box ${id}: password --->     ${getText}     <--- copied to clipboard!`)
- };
+  notifyUser()
+ }
+
+ 
+ function notifyUser() {
+  copiedText.classList.add('done')
+  let temp = setInterval( () => {
+    copiedText.classList.remove('done')
+    clearInterval(temp)
+  }, 1000)
+ }
 
 
  function clearFields() {
