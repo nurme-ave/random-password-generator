@@ -34,8 +34,13 @@ function copyToClipboard() {
   let getText;
   id = this.id
   getText = allBoxes[id - 1].textContent
-  navigator.clipboard.writeText(getText)
-  notifyUser()
+
+  if (getText !== '') {
+    navigator.clipboard.writeText(getText)
+    notifyUser()
+  } else {
+    return
+  }
  }
 
  
