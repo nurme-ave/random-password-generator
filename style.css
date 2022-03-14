@@ -84,9 +84,7 @@ body {
 }
 
 button:hover {
-  color: #5def92;
-  background-color: #273549;
-  border: 0.01em solid grey;
+  color: #000;
 }
 
 .boxes-group {
@@ -119,31 +117,7 @@ button:hover {
   color: #fff;
 }
 
-.copied-hover-text.active {
-  opacity: 0;
-  position: absolute;
-  left: 50%;
-  text-align: center;
-  /* transform: translateX(-50%); */
-  animation: fadeOut 5s ease-in-out;
-  color: #fff;
-}
 
-@keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity:1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-5em);
-  }
-}
 
 .three-dots-icon {
   color: #3F516B;
@@ -153,11 +127,6 @@ button:hover {
 .fa-clipboard {
   text-align: right;
 }
-
-
-
-
-
 
 
 

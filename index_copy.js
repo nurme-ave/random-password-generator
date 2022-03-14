@@ -31,10 +31,8 @@ function generateRandomPasswords() {
 
 
 function copyToClipboard() {
-  copiedHoverText.classList.remove('active')
   let getText;
   id = this.id
-  copiedHoverText.classList.add('active')
   getText = allBoxes[id - 1].textContent
   navigator.clipboard.writeText(getText)
   alert(`Box ${id}: password --->     ${getText}     <--- copied to clipboard!`)
