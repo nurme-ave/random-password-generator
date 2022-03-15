@@ -158,19 +158,10 @@ button:hover {
   .card-container {
     width: 100%;
     height: 100%;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: 2em 1em;
-  }
-
-  .card-heading,
-  .card-heading-accent {
-    font-size: 2rem;
-  }
-
-  .card-heading-supporting-text {
-    font-size: 1.5rem;
-    padding-bottom: 1em;
+    padding: 2em 1em 1em;
   }
 
   .button-group {
@@ -190,6 +181,6 @@ button:hover {
   }
 
   .copied-text {
-    bottom: 40%;
+    bottom: 50%;
   }
 }
