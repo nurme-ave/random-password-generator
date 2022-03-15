@@ -158,7 +158,6 @@ button:hover {
   .card-container {
     width: 100%;
     height: 100%;
-    justify-content: flex-start;
     align-items: center;
     text-align: center;
     padding: 2em 1em;
@@ -188,5 +187,9 @@ button:hover {
   .line {
     width: 65%;
     margin: 1.5em 0;
+  }
+
+  .copied-text {
+    bottom: 50%;
   }
 }
