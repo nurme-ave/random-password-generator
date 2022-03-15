@@ -25,7 +25,7 @@ function generateRandomPasswords() {
   }
 
   for (let k = 0; k < allBoxes.length; k++) {
-    allBoxes[k].innerText = arrayOfPasswords[k]
+    allBoxes[k].textContent = arrayOfPasswords[k]
   }
 }
 
@@ -55,6 +55,6 @@ function copyToClipboard() {
 
  function clearFields() {
   allBoxes.forEach(item => {
-    item.innerText = ''
+    item.textContent = ''
   })
 }
