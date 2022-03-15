@@ -161,7 +161,7 @@ button:hover {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: 2em 1em 1em;
+    padding: 2em 1em;
   }
 
   .button-group {
