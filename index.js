@@ -1,7 +1,7 @@
 const generatePasswords = document.querySelector('.generate-pwrd-button')
 const clearAllFields = document.querySelector('.clear-all-fields-button')
 const copiedText = document.querySelector('.copied-text')
-const alphabet = String.fromCharCode(...Array(123).keys()).slice(33)  // create an array with 123 items starting from index 33 in the ASCII code
+const chars = String.fromCharCode(...Array(123).keys()).slice(33)  // create a string with 123 items starting from index 33 in the ASCII code
 
 let allBoxes = document.querySelectorAll('.box')
 
@@ -19,7 +19,7 @@ function generateRandomPasswords() {
     result = ''
 
     for (let j = 0; j < lengthOfPassword; j++) {
-      result += alphabet.charAt(Math.floor(Math.random() * alphabet.length))
+      result += chars.charAt(Math.floor(Math.random() * chars.length))
     }
     arrayOfPasswords.push(result)
   }
