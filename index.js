@@ -38,8 +38,6 @@ function copyToClipboard() {
   if (getText !== '') {
     navigator.clipboard.writeText(getText)
     notifyUser()
-  } else {
-    return
   }
  }
 

@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/54dd1c0248.js" crossorigin="anonymous"></script>
-  <title>Scrimba Solo Project - Random Password Generator</title>
-</head>
-<body>
-  <main class="main-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/54dd1c0248.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Scrimba Solo Project - Random Password Generator</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <section class="card-container">
+        <h2>
+          <span class="card-heading">Generate a</span
+          ><span class="card-heading-accent">random password</span>
+        </h2>
+        <h3 class="card-heading-supporting-text">
+          Never use an insecure password again.
+        </h3>
 
-    <section class="card-container">
-      
-      <h2><span class="card-heading">Generate a</span><span class="card-heading-accent">random password</span></h2>
-      <h3 class="card-heading-supporting-text">Never use an insecure password again.</h3>
-    
-      <div class="button-group">
-        <button class="generate-pwrd-button"><i class="fa-solid fa-bolt button-icon"></i> Generate passwords</button>
-        <button class="clear-all-fields-button"><i class="fa-solid fa-broom button-icon"></i> Clear all fields</button>
-      </div>
+        <div class="button-group">
+          <button class="generate-pwrd-button">
+            <i class="fa-solid fa-bolt button-icon"></i> Generate passwords
+          </button>
+          <button class="clear-all-fields-button">
+            <i class="fa-solid fa-broom button-icon"></i> Clear all fields
+          </button>
+        </div>
 
-      <hr class="line">
-      
-      <div class="boxes-group">
-        <div id="1" class="box" title="Click to copy"><i class="fa-solid fa-ellipsis three-dots-icon"></i></div>
-        <div id="2" class="box" title="Click to copy"><i class="fa-solid fa-ellipsis three-dots-icon"></i></div>
-        <div id="3" class="box" title="Click to copy"><i class="fa-solid fa-ellipsis three-dots-icon"></i></div>
-        <div id="4" class="box" title="Click to copy"><i class="fa-solid fa-ellipsis three-dots-icon"></i></div>
-      </div>
-      
-      <div class="copied-text">Copied!</div>
+        <hr class="line" />
 
-    </section>
+        <div class="boxes-group">
+          <div id="1" class="box" title="Click to copy">
+            <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+          </div>
+          <div id="2" class="box" title="Click to copy">
+            <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+          </div>
+          <div id="3" class="box" title="Click to copy">
+            <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+          </div>
+          <div id="4" class="box" title="Click to copy">
+            <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+          </div>
+        </div>
 
-  </main>
-  <script src="index.js"></script>
-</body>
+        <div class="copied-text">Copied!</div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
