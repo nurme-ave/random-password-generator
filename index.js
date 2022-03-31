@@ -2,7 +2,7 @@ const generatePasswordsButton = document.querySelector('.generate-pwrd-button');
 const clearAllFieldsButton = document.querySelector('.clear-all-fields-button');
 const userInput = document.getElementById('user-input');
 const formEl = document.querySelector('.form');
-const passwordBoxesButtons = document.querySelector('.password-boxes');
+const passwordBoxesEl = document.querySelector('.password-boxes');
 const notificationText = document.querySelector('.notification-text');
 const chars = String.fromCharCode(...Array(123).keys()).slice(33); // create a string with 123 items starting from index 33 in the ASCII code
 
@@ -17,7 +17,7 @@ formEl.addEventListener('submit', (e) => {
 
 generatePasswordsButton.addEventListener('click', generatePasswords);
 clearAllFieldsButton.addEventListener('click', clearFields);
-passwordBoxesButtons.addEventListener('click', copyPasswords);
+passwordBoxesEl.addEventListener('click', copyPasswords);
 
 
 // Display Passwords
@@ -30,6 +30,13 @@ function generatePasswords() {
   }
 }
 
+function validateUserInput(ip) {
+  if (ip >= 10 && ip <= 20) {
+    return ip;
+  }
+}
+
+// Is there a better way to generate passwords other than using nested for-loop?
 function getRandomPasswords(len) {
   let password = '';
   let arrayOfPasswords = [];
@@ -43,12 +50,6 @@ function getRandomPasswords(len) {
     arrayOfPasswords.push(password);
   }
   return arrayOfPasswords;
-}
-
-function validateUserInput(ip) {
-  if (ip >= 10 && ip <= 20) {
-    return ip;
-  }
 }
 
 
