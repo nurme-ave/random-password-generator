@@ -247,6 +247,11 @@
     display: none;
   }
 
+  .enter-input-text {
+    font-size: 1.1rem;
+    margin: auto .5em;
+  }
+
   .chevron-down {
     display: block;
     color: #fff;
