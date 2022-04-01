@@ -1,12 +1,18 @@
+const formEl = document.querySelector('.form');
 const generatePasswordsButton = document.querySelector('.generate-pwrd-button');
 const clearAllFieldsButton = document.querySelector('.clear-all-fields-button');
+const passwordBoxesMainEl = document.querySelector('.password-boxes');
+const allPasswordBoxes = document.querySelectorAll('.box');
 const userInput = document.getElementById('user-input');
-const formEl = document.querySelector('.form');
-const passwordBoxesEl = document.querySelector('.password-boxes');
+const instructionsText = document.querySelector('.instructions-text')
 const notificationText = document.querySelector('.notification-text');
+
 const chars = String.fromCharCode(...Array(123).keys()).slice(33); // create a string with 123 items starting from index 33 in the ASCII code
 
-let allPasswordBoxes = document.querySelectorAll('.box');
+
+generatePasswordsButton.addEventListener('click', generatePasswords);
+clearAllFieldsButton.addEventListener('click', clearFields);
+passwordBoxesMainEl.addEventListener('click', copyToClipboard);
 
 
 // Prevent form submission on the 'ENTER' key
@@ -15,36 +21,46 @@ formEl.addEventListener('submit', (e) => {
 });
 
 
-generatePasswordsButton.addEventListener('click', generatePasswords);
-clearAllFieldsButton.addEventListener('click', clearFields);
-passwordBoxesEl.addEventListener('click', copyPasswords);
+/*
+  Change the color of the text next to the user input 
+  from the color 'red' back to 'white' after the user has 
+  entered an invalid input and clicks the user input
+  to enter a new value.
+*/
+userInput.addEventListener('click', () => {
+  if (instructionsText.style.color === 'red') {
+    instructionsText.style.color = 'white';
+  }
+});
 
 
 // Display Passwords
 function generatePasswords() {
   const lengthOfPassword = validateUserInput(+userInput.value);
-  const pwrds = getRandomPasswords(lengthOfPassword);
 
-  for (let i = 0; i < allPasswordBoxes.length; i++) {
-    allPasswordBoxes[i].textContent = pwrds[i];
+  if (lengthOfPassword) {
+    const randomPasswords = getRandomPasswords(lengthOfPassword);
+    fillPasswordBoxes(randomPasswords)
   }
 }
 
-function validateUserInput(ip) {
-  if (ip >= 10 && ip <= 20) {
-    return ip;
-  }
+
+function validateUserInput(len) {
+  if (len >= 10 && len <= 20) {
+    return len;
+  } 
+  instructionsText.style.color = 'red';
 }
 
-// Is there a better way to generate passwords other than using nested for-loop?
-function getRandomPasswords(len) {
+
+function getRandomPasswords(num) {
   let password = '';
   let arrayOfPasswords = [];
 
   for (let i = 0; i < 4; i++) {
     password = '';
 
-    for (let j = 0; j < len; j++) {
+    for (let j = 0; j < num; j++) {
       password += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     arrayOfPasswords.push(password);
@@ -53,25 +69,40 @@ function getRandomPasswords(len) {
 }
 
 
+function fillPasswordBoxes(pwrds) {
+  for (let i = 0; i < allPasswordBoxes.length; i++) {
+    allPasswordBoxes[i].textContent = pwrds[i];
+  }
+}
+
+
 // Copy To Clipboard
-function copyPasswords(e) {
+function copyToClipboard(e) {
   if (e.target.tagName === 'BUTTON') {
-    copyToClipboard(e.target.textContent);
-    notifyUser();
+    const textToCopy = e.target.textContent;
+    navigator.clipboard.writeText(textToCopy)
+    .then( () => {
+      notifyUser();
+    })
+    .catch(err => {
+      alert('Something went wrong', err);
+    });
   }
 }
 
-function copyToClipboard(textToCopy) {
-  console.log(textToCopy);
-  if (textToCopy) {
-    const result = navigator.clipboard.writeText(textToCopy);
-    return result;
-  }
-}
 
+/*
+  When the user clicks on the password box a special
+  notification box appears to notify the user that
+  the password has been copied.
+  I'm using the setInterval() and clearInterval() methods
+  here to automatically remove the class 'copied' from
+  the notification text element. Otherwise, if we don't remove
+  the class the notification text will only appear once.
+*/
 function notifyUser() {
   notificationText.classList.add('copied');
-  let temp = setInterval(() => {
+  let temp = setInterval( () => {
     notificationText.classList.remove('copied');
     clearInterval(temp);
   }, 1000);
