@@ -168,6 +168,7 @@
   height: 3.25em;
   padding: 0.75em; 
   font-size: 1.1rem;
+  border: none;
   border-radius: 0.5em;
   color: #5def92;
   background-color: #273549;
@@ -275,10 +276,6 @@
   .box {
     width: 15em;
     }
-
-  .box {
-    border: none;
-  }
 
   .notification-text {
     bottom: 30%;
