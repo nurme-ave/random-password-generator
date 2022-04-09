@@ -32,6 +32,8 @@ New things learned:
 
 The page is fully responsive.
 
+The code has been reviewed and approved by a Scrimba instructor.
+
 ### Screenshot
 
 ![Screenshot of my solution](/random-password-generator.png)
