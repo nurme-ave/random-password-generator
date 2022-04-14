@@ -35,14 +35,14 @@ function displayPasswords() {
   }
 }
 
-function generatePasswords(userPwLength) {
+function generatePasswords(userPasswordLength) {
   let password = '';
   let arrayOfPasswords = [];
   let totalBoxes = allPasswordBoxes.length;
 
-  for (let i = 0; i < userPwLength * totalBoxes; i++) {
+  for (let i = 0; i < userPasswordLength * totalBoxes; i++) {
     password += chars.charAt(Math.floor(Math.random() * chars.length));
-    if (password.length === userPwLength) {
+    if (password.length === userPasswordLength) {
       arrayOfPasswords.push(password);
       password = '';
     }
@@ -51,9 +51,9 @@ function generatePasswords(userPwLength) {
   return arrayOfPasswords;
 }
 
-function fillPasswordBoxes(pwrds) {
+function fillPasswordBoxes(generatedPasswords) {
   for (let i = 0; i < allPasswordBoxes.length; i++) {
-    allPasswordBoxes[i].textContent = pwrds[i];
+    allPasswordBoxes[i].textContent = generatedPasswords[i];
   }
 }
 
