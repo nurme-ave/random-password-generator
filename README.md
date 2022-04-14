@@ -29,7 +29,6 @@ New things learned:
 - generate an array of letters, numbers and symbols from the ASCII code by using String.fromCharCode()
 - write specified text string to the system clipboard (1-click-copy) with clipboard.writeText()
 - automatically add and remove classes using setTimeout()
-- 
 
 The page is fully responsive.
 
