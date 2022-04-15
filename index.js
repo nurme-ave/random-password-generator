@@ -53,7 +53,6 @@ function generatePasswords(userPasswordLength) {
     password += chars.charAt(Math.floor(Math.random() * chars.length));
     if (password.length === userPasswordLength) {
       arrayOfPasswords.push(password);
-      console.log(password);
       password = '';
     }
   }
