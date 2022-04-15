@@ -9,7 +9,7 @@ const notificationText = document.querySelector('.notification-text');
 const chars = String.fromCharCode(...Array(123).keys()).slice(33);
 
 // Create password boxes dynamically
-const numberOfPwrdBoxes = 6;
+const numberOfPwrdBoxes = 4;
 for (let i = 0; i < numberOfPwrdBoxes; i++) {
   let button = document.createElement('button');
   button.classList.add('box');
