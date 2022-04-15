@@ -1,13 +1,25 @@
 const generatePasswordsButton = document.querySelector('.generate-pwrd-button');
 const clearAllFieldsButton = document.querySelector('.clear-all-fields-button');
 const passwordBoxesMainEl = document.querySelector('.password-boxes');
-const allPasswordBoxes = document.querySelectorAll('.box');
 const userInput = document.getElementById('user-input');
 const instructionsText = document.querySelector('.instructions-text');
 const notificationText = document.querySelector('.notification-text');
 
-const chars = String.fromCharCode(...Array(123).keys()).slice(33); // create a string with 123 items starting from index 33 in the ASCII code
+// Create a string starting from index 33 in the ASCII code
+const chars = String.fromCharCode(...Array(123).keys()).slice(33);
 
+// Create password boxes dynamically
+const numberOfPwrdBoxes = 6;
+for (let i = 0; i < numberOfPwrdBoxes; i++) {
+  let button = document.createElement('button');
+  button.classList.add('box');
+  button.innerHTML = `<i class="fa-solid fa-ellipsis three-dots-icon"></i>`;
+  passwordBoxesMainEl.appendChild(button);
+}
+
+const allPasswordBoxes = document.querySelectorAll('.box');
+
+// Event listeners
 generatePasswordsButton.addEventListener('click', displayPasswords);
 clearAllFieldsButton.addEventListener('click', clearFields);
 passwordBoxesMainEl.addEventListener('click', copyToClipboard);
@@ -38,16 +50,15 @@ function displayPasswords() {
 function generatePasswords(userPasswordLength) {
   let password = '';
   let arrayOfPasswords = [];
-  let totalBoxes = allPasswordBoxes.length;
 
-  for (let i = 0; i < userPasswordLength * totalBoxes; i++) {
+  for (let i = 0; i < userPasswordLength * numberOfPwrdBoxes; i++) {
     password += chars.charAt(Math.floor(Math.random() * chars.length));
     if (password.length === userPasswordLength) {
       arrayOfPasswords.push(password);
+      console.log(password);
       password = '';
     }
   }
-
   return arrayOfPasswords;
 }
 
