@@ -1,5 +1,3 @@
-const generatePasswordsButton = document.querySelector('.generate-pwrd-button');
-const clearAllFieldsButton = document.querySelector('.clear-all-fields-button');
 const passwordBoxesMainEl = document.querySelector('.password-boxes');
 const userInput = document.getElementById('user-input');
 const instructionsText = document.querySelector('.instructions-text');
@@ -20,8 +18,8 @@ for (let i = 0; i < numberOfPwrdBoxes; i++) {
 const allPasswordBoxes = document.querySelectorAll('.box');
 
 // Event listeners
-generatePasswordsButton.addEventListener('click', displayPasswords);
-clearAllFieldsButton.addEventListener('click', clearFields);
+document.querySelector('.generate-pwrd-button').addEventListener('click', displayPasswords);
+document.querySelector('.clear-all-fields-button').addEventListener('click', clearFields);
 passwordBoxesMainEl.addEventListener('click', copyToClipboard);
 
 document.querySelector('.form').addEventListener('submit', (e) => {
