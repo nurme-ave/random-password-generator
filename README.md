@@ -1,4 +1,4 @@
-# Random Password Generator - Solo Project 2 at Scrimba
+# Random Password Generator
 
 This is a personal project built by [Ave Nurme](https://www.avenurme.dev).
 
@@ -15,7 +15,7 @@ This is a personal project built by [Ave Nurme](https://www.avenurme.dev).
 
 ### Project Description
 
-This was my second solo project at the Scrimba's Frontend Developer Career Path. Solo project means that you are only provided with the Figma design file and a set of requirements you need to implement in the project. There is no hand-holding or a walk-through solution with the instructor. How you solve the challenge and implement the logic is completely up to you.
+This was my second solo project at the Scrimba's Frontend Developer Career Path. Solo project means that you are only provided with a set of requirements you need to implement in the project. There is no hand-holding or a walk-through solution with the instructor and you're on your own.
 
 A stretch goal in this project was to add 1-click-copy which was quite interesting to implement.
 
@@ -30,13 +30,13 @@ New things learned:
 - write specified text string to the system clipboard (1-click-copy) with clipboard.writeText()
 - automatically add and remove classes using setTimeout()
 
-The page is fully responsive.
+The page has been built with mobile-first design in mind and is fully responsive.
 
 The code has been reviewed and approved by a Scrimba instructor.
 
 ### Screenshot
 
-![Screenshot of my solution](/random-password-generator.png)
+![Screenshot of my solution](/random-password-generator_760.png)
 
 ### Links
 

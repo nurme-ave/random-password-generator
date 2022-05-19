@@ -1,81 +1,122 @@
-/* General Styling */
+:root {
+  --white: #fff;
+  --yellow: #fff338;
+  --midnight-express: rgb(32, 38, 57);
+  --main-background: linear-gradient(to bottom, rgba(32, 38, 57, 1) 11.4%, rgba(63, 76, 119, 1) 35.2%, rgba(32, 38, 57, 1) 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Karla', sans-serif;
+  overflow-x: hidden;
 }
 
 .main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1c1c1c;
+  background: var(--main-background);
 }
 
-.card-container {
-  position: relative;
+.section-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 650px;
-  height: 600px;
-  padding: 3em;
-  border-radius: 0.5em;
-  background-color: #1f2937;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--main-background);
 }
 
-.card-heading {
-  width: 100%;
-  color: #fff;
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  padding: 3em 2em;
+  border-bottom: 1px solid lightgray;
+}
+
+.main-heading {
   font-size: 2.5rem;
   font-weight: 800;
-  line-height: 40px;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
 }
 
-.card-heading-accent {
+.accent-text {
   display: block;
-  color: #34d399;
-  padding-bottom: 0.6em;
-  font-size: 2.5rem;
-  font-weight: 800;
+  margin-bottom: .5em;
+  text-align: center;
+  overflow: hidden;
+  color: var(--yellow);
+  opacity: .9;
 }
 
-.card-heading-supporting-text {
-  color: #d5d4d8;
-  padding-bottom: 2em;
-  line-height: 28px;
+.supporting-text {
+  margin-bottom: .5em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--white);
 }
 
-.line {
-  border: 1px solid #2f3e53;
-  margin: 2em 0;
+.intro-footer {
+  font-size: .9rem;
+  letter-spacing: 0.02em;
+  color: var(--white);
 }
 
-.top-line {
-  display: none;
+.intro-footer a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--yellow);
+  opacity: .9;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.password-generator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
 }
 
 .form-field {
   display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-bottom: 1.25em;
+  padding: 3em 0;
+  gap: 1em;
 }
 
 .form input {
   width: 10em;
   height: 3.25em;
   padding: 0.75em;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.1rem;
   text-align: center;
   border: none;
   border-radius: 0.5em;
-  color: #10b981;
-  background-color: #fff;
-  outline: #fff;
+  color: var(--midnight-express);
+  background-color: var(--white);
+  outline: var(--white);
   cursor: text;
 }
 
@@ -84,7 +125,7 @@
 }
 
 ::placeholder {
-  color: #10b981;
+  color: var(--midnight-express);
 }
 
 /* 
@@ -101,30 +142,44 @@
   -moz-appearance: textfield;
 }
 
-.chevron-down {
+.three-arrows {
   display: none;
 }
 
 .instructions-text {
   font-size: 1.1rem;
-  color: #fff;
-  margin: auto 1em;
+  font-weight: 500;
+  color: var(--yellow);
 }
 
-.three-arrows {
-  margin-right: .25em;
+.chevron-down {
+  display: block;
+  color: var(--white);
 }
 
-.button-group {
+.button-group,
+.password-boxes {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 1.25em;
 }
 
+.password-boxes {
+  position: relative;
+  padding: 3em 0;
+}
+
+.button-group {
+  padding-bottom: 3em;
+  border-bottom: 1px solid lightgray;
+}
+
 .generate-pwrd-button,
 .clear-all-fields-button {
-  flex: 1;
+  width: 15em;
   height: 3.25em;
   padding: 0.75em;
   font-size: 1.1rem;
@@ -132,76 +187,60 @@
   line-height: 24px;
   border: none;
   border-radius: 0.5em;
-  color: #fff;
-  background-color: #10b981;
+  color: var(--white);
+  background-color: var(--midnight-express);
   cursor: pointer;
 }
 
 .generate-pwrd-button:hover,
 .clear-all-fields-button:hover {
-  color: #000;
-  font-weight: 500;
-}
-
-.button-group-icon {
-  font-size: 1rem;
-  margin-right: 0.25em;
-}
-
-.password-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 1.25em;
-}
-
-.password-boxes > * {
-  flex-basis: 48%;
+  color: var(--midnight-express);
+  background-color: var(--yellow);
+  opacity: .9;
+  outline: 0;
 }
 
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 15em;
   height: 3.25em;
   padding: 0.75em; 
   font-size: 1.1rem;
+  font-weight: 500;
   border: none;
   border-radius: 0.5em;
-  color: #5def92;
-  background-color: #273549;
+  color: var(--midnight-express);
+  background-color: var(--white);
   cursor: pointer;
 }
 
-.box:hover {
-  color: #fff;
-}
-
 .three-dots-icon {
-  color: #3F516B;
+  color: var(--midnight-express);
   font-size: 1.5rem;
 }
 
 .notification-text {
   position: absolute;
+  top: 50%;
   left: 50%;
-  bottom: 15%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
   visibility: hidden;
-  padding: 0.75em;
+  padding: 1em 1.5em;
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 600;
+  border: 1px solid #000;
   border-radius: 0.5em;
-  color: #273549;
-  background-color: #d5d4d8;
+  color: var(--midnight-express);
+  background-color: var(--yellow);
 }
 
 .notification-text.copied {
   animation: copied 1s ease-in-out;
   visibility: visible;
+  opacity: .1;
 }
 
 @keyframes copied {
@@ -218,66 +257,122 @@
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 604.98px) {
-  .main-container {
-    height: auto;
+@media screen and (min-width: 500px) {
+  .intro,
+  .password-generator {
+    width: 75vw;
   }
+}
 
-  .card-container {
-    width: 100%;
-    height: auto;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    padding: 2em 1em;
-    border-radius: 0;
-  }
-
-  .card-heading-supporting-text {
-    padding-bottom: 0;
-  }
-  
-  .line {
-    width: 85%;
-  }
-  
-  .top-line {
-    display: block;
-  }
-
-  .three-arrows {
-    display: none;
-  }
-
-  .instructions-text {
-    margin: auto .5em;
+@media screen and (min-width: 768px) {
+  .form-field {
+    flex-direction: row;
+    padding: 3em 0 2em;
   }
 
   .chevron-down {
-    display: block;
-    color: #fff;
+    display: none;
   }
   
-  .form-field {
-    flex-direction: column-reverse;
-    gap: 1em;
+  .three-arrows {
+    display: flex;
+    margin-right: .5em;
+  }
+
+  .instructions-text {
+    display: flex;
   }
 
   .button-group,
-  .password-boxes {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25em;
+  .password-boxes  {
+    flex-direction: row;
   }
 
-  .generate-pwrd-button,
-  .clear-all-fields-button,
-  .box {
-    width: 15em;
-    }
+  .password-boxes {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .intro,
+  .password-generator {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .intro,
+  .password-generator {
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section-container{
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .section-container > * {
+    flex-basis: 100%;
+  }
+
+  .main-heading {
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .supporting-text {
+    font-size: 2rem;
+  }
+
+  .intro-footer {
+    font-size: 1rem;
+  }
+  
+  .main-heading,
+  .accent-text,
+  .supporting-text,
+  .intro-footer{
+    width: 100%;
+    text-align: right;
+  }
+
+  .intro,
+  .button-group {
+    border-bottom: none;
+  }
+
+  .intro,
+  .content {
+    height: 500px;
+  }
+  
+  .intro {
+    padding: 3em 4.25em 3em;
+    border-right: 1px solid lightgray;
+  }
+  
+  .content {
+    padding: 0 4.25em;
+  }
+
+  .button-group {
+    padding-bottom: 0;
+  }
+  
+  .password-generator {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .form-field,
+  .button-group,
+  .password-boxes {
+    justify-content: flex-start;
+  }
 
   .notification-text {
-    bottom: 30%;
+    left: 47%;
   }
 }
