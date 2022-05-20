@@ -1,6 +1,6 @@
 import { passwordBoxesMainEl } from './index.js';
 
-const notificationText = document.querySelector('.notification-text');
+const notificationText = document.getElementById('notification-text');
 
 passwordBoxesMainEl.addEventListener('click', copyToClipboard);
 

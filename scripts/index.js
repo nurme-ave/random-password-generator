@@ -1,8 +1,8 @@
-const passwordBoxesMainEl = document.querySelector('.password-boxes');
+const passwordBoxesMainEl = document.getElementById('password-boxes');
 const userInput = document.getElementById('user-input');
-const instructionsText = document.querySelector('.instructions-text');
+const instructionsText = document.getElementById('instructions-text');
 
-document.querySelector('.clear-all-fields-button').addEventListener('click', clearFields);
+document.getElementById('clear-all-fields-button').addEventListener('click', clearFields);
 
 // Create password boxes dynamically
 const numberOfPwrdBoxes = 4;

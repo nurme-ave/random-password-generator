@@ -2,11 +2,11 @@ import { userInput, instructionsText, numberOfPwrdBoxes, allPasswordBoxes } from
 
 const chars = String.fromCharCode(...Array(123).keys()).slice(33);
 
-document.querySelector('.form').addEventListener('submit', (e) => {
+document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
 });
 
-document.querySelector('.generate-pwrd-button').addEventListener('click', displayPasswords);
+document.getElementById('generate-pwrd-button').addEventListener('click', displayPasswords);
 
 function displayPasswords() {
   const lengthOfPassword = +userInput.value;
