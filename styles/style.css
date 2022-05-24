@@ -230,11 +230,11 @@
   visibility: hidden;
   padding: 1em 1.5em;
   font-size: 1.2rem;
-  font-weight: 600;
-  border: 1px solid #000;
+  font-weight: 500;
+  border: 1px solid var(--white);
   border-radius: 0.5em;
-  color: var(--midnight-express);
-  background-color: var(--yellow);
+  color: var(--white);
+  background-color: var(--midnight-express);
 }
 
 .notification-text.copied {
