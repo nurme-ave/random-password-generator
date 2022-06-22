@@ -15,7 +15,7 @@ This is a personal project built by [Ave Nurme](https://www.avenurme.dev).
 
 ### Project Description
 
-If you are too lazy to come up with good passwords then this is just the right app for you! :)
+Out of ideas to come up with a good secure password? No worries, try this random password generator and never use an insecure password again! :)
 
 Here I also decided to take the modular JavaScript approach and splitted the code into 3 separate files.
 
