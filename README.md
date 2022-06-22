@@ -15,24 +15,17 @@ This is a personal project built by [Ave Nurme](https://www.avenurme.dev).
 
 ### Project Description
 
-This was my second solo project at the Scrimba's Frontend Developer Career Path. Solo project means that you are only provided with a set of requirements you need to implement in the project. There is no hand-holding or a walk-through solution with the instructor and you're on your own.
+If you are too lazy to come up with good passwords then this is just the right app for you! :)
 
-A stretch goal in this project was to add 1-click-copy which was quite interesting to implement.
+Here I also decided to take the modular JavaScript approach and splitted the code into 3 separate files.
 
-More features I added myself:
-- user input and the instructions text next to it
-- when the user enters an invalid number the instructions text will turn red
-- the 'Clear password fields' button
-- a hovering 'Copied!' text when the password has been copied on the clipboard
+If the user enters a number which is less than 10 or more than 20 the instructions text right to the user input will turn red, notifying the user that their input is not valid, and no passwords are generated.
 
-New things learned:
-- generate an array of letters, numbers and symbols from the ASCII code by using String.fromCharCode()
-- write specified text string to the system clipboard (1-click-copy) with clipboard.writeText()
-- automatically add and remove classes using setTimeout()
+I'm utilizing String.fromCharCode() and Math.random() here to create the passwords. String.fromCharCode() combined with (...Array.keys()) and slice() generates an array of letters, numbers and symbols from the ASCII code. This enables you to create a whole array of characters with just one line of code.
+
+Once the passwords are generated the user can utilize 1-click-copy and a hovering 'Copied!' text will appear on the screen after doing so.
 
 The page has been built with mobile-first design in mind and is fully responsive.
-
-The code has been reviewed and approved by a Scrimba instructor.
 
 ### Screenshot
 
