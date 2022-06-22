@@ -33,7 +33,7 @@ The page has been built with mobile-first design in mind and is fully responsive
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://nurme-ave.github.io/scrimba-solo-project-random-password-generator/)
+- Live Site URL: [GitHub Pages](https://nurme-ave.github.io/random-password-generator/)
 
 ### Built with
 
